@@ -1,0 +1,53 @@
+﻿@page
+@model MILK.Pages.Farmers.IndexModel
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-7">
+                <h2 class="text-primary">Farmers List</h2>
+        </div>
+        <div class="col-5 text-end">
+            <a asp-page="Registration" class="btn btn-primary"><i class="bi bi-person-plus-fill"></i>&nbsp;New Farmer</a> 
+        </div>
+    </div>
+    <br/>
+    <br/>
+     
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Member No
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    IDNo
+                </th>
+                <th>
+                    Phone No
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+           
+           
+               @foreach(var obj in Model.Farmers)
+               {
+                    <tr>
+                       <td width="50">@obj.MemberNo</td>
+                       <td width="50">@obj.Name</td>
+                       <td width="50">@obj.IDNo</td>
+                       <td width="50">@obj.PhoneNo</td>
+                       <td width="50">
+                           <div class="w-75 btn-group" role="group"> 
+                              <a asp-page="Registration" asp-route-id="@obj.id" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i></a>
+                           </div> 
+                       </td>
+                    </tr>
+            }           
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,143 @@
+﻿@page
+@model MILK.Pages.Farmers.RegistrationModel
+<form method="post">
+    @if (Model.Farmer.id != 0 )
+    {
+        <input hidden asp-for="Farmer.id"/>
+    }
+    <div class="border p-3 mt-4">
+        <div class="row pb-3">
+           <h2 class="text-primary">@(Model.Farmer.id!=0? "Edit":"Registration") Farmer</h2>
+           <hr />
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <label asp-for="Farmer.MemberNo"></label>
+            </div>
+            <div class="col-2">
+                <input asp-for="Farmer.MemberNo" class="form-control"/>
+                <span asp-validation-for="Farmer.MemberNo" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+               <label asp-for="Farmer.Name"></label>
+             </div>
+             <div class="col-4">
+                <input asp-for="Farmer.Name" class="form-control"/>
+                <span asp-validation-for="Farmer.Name" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+                <label asp-for="Farmer.IDNo"></label>
+            </div>
+            <div class="col-3">
+                <input asp-for="Farmer.IDNo" class="form-control" />
+                <span asp-validation-for="Farmer.IDNo" class="text-danger"></span>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-1">
+                <label asp-for="Farmer.PhoneNo"></label>
+            </div>
+            <div class="col-2">
+                <input asp-for="Farmer.PhoneNo" class="form-control text-blue" />
+                <span asp-validation-for="Farmer.PhoneNo" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+                <label asp-for="Farmer.Gender"></label>
+            </div>
+            <div class="col-2">
+                <input asp-for="Farmer.Gender" class="form-control" />
+                <span asp-validation-for="Farmer.Gender" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+                <label asp-for="Farmer.Active"></label>
+            </div>
+            <div class="col-1">
+                <input asp-for="Farmer.Active" class="check-box" />
+                <span asp-validation-for="Farmer.Active" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+                <label asp-for="Farmer.Payment"></label>
+            </div>
+            <div class="col-3">
+                <input asp-for="Farmer.Payment" class="form-control" />
+                <span asp-validation-for="Farmer.Payment" class="text-danger"></span>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-1">
+                <label asp-for="Farmer.Village"></label>
+            </div>
+            <div class="col-2">
+                <input asp-for="Farmer.Village" class="form-control"/>
+                <span asp-validation-for="Farmer.Village" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+               <label asp-for="Farmer.Location"></label>
+             </div>
+             <div class="col-4">
+                <input asp-for="Farmer.Location" class="form-control"/>
+                <span asp-validation-for="Farmer.Location" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+                <label asp-for="Farmer.Division"></label>
+            </div>
+            <div class="col-3">
+                <input asp-for="Farmer.Division" class="form-control" />
+                <span asp-validation-for="Farmer.Division" class="text-danger"></span>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-1">
+                <label asp-for="Farmer.Bankname"></label>
+            </div>
+            <div class="col-2">
+                <input asp-for="Farmer.Bankname" class="form-control"/>
+                <span asp-validation-for="Farmer.Bankname" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+               <label asp-for="Farmer.Bankacc"></label>
+             </div>
+             <div class="col-4">
+                <input asp-for="Farmer.Bankacc" class="form-control"/>
+                <span asp-validation-for="Farmer.Bankacc" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+                <label asp-for="Farmer.Bankcode"></label>
+            </div>
+            <div class="col-3">
+                <input asp-for="Farmer.Bankcode" class="form-control" />
+                <span asp-validation-for="Farmer.Bankcode" class="text-danger"></span>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="Farmer.RegistrationDate"></label>
+            </div>
+            <div class="col-2">
+                <input asp-for="Farmer.RegistrationDate" class="form-control" type="date"/>
+                <span asp-validation-for="Farmer.RegistrationDate" class="text-danger"></span>
+            </div>
+            <div class="col-1">
+               <label asp-for="Farmer.photo"></label>
+             </div>
+             <div class="col-4">
+                <input asp-for="Farmer.photo " class="form-control"/>
+                <span asp-validation-for="Farmer.photo" class="text-danger"></span>
+            </div>
+           </div>
+            <br/>
+            <div class="row">
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary" style="width:150px;">@(Model.Farmer.id!=0? "Update":"Save")</button>
+                </div>
+                <div class="col-8"></div>
+                <div class="col-2">
+                    <a asp-page="Index" class="btn btn-secondary text-end" style="width:150px;"><i class="bi bi-box-arrow-right"></i>&nbsp;Back</a>
+                </div>
+            </div>       
+    </div>
+</form>
